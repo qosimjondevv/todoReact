@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./TodoApp.scss";
+import TodoList from "../TodoList/TodoList";
 function TodoApp() {
   const [text, setText] = useState("");
   const [todos, setTodos] = useState([]);
 
   const addTodo = (e) => {
+    e.preventDefault();
     if (text === "") return;
     const newTodo = {
       id: Date.now(),
@@ -13,7 +15,6 @@ function TodoApp() {
     };
     setTodos([...todos, newTodo]);
     setText("");
-    e.preventDefault();
   };
 
   const deleteBtn = (id) => {
@@ -31,14 +32,14 @@ function TodoApp() {
     <>
       <div className="todoApp">
         <h1>Todo App</h1>
-        <form>
+        <form onSubmit={addTodo}>
           <input
             type="text"
             placeholder="todo qosh"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <button onClick={addTodo}>add</button>
+          <button type="submit">add</button>
           <span>count: {todos.length}</span>
         </form>
 
@@ -46,21 +47,13 @@ function TodoApp() {
         <div className="todoList">
           <ul>
             {todos.map((todo) => (
-              <li key={todo.id}>
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => toggleTodo(todo.id)}
-                />
-                <span
-                  style={{
-                    textDecoration: todo.completed ? "line-through" : "none",
-                  }}
-                >
-                  {todo.text}
-                </span>
-                <button onClick={() => deleteBtn(todo.id)}>delete</button>
-              </li>
+              <TodoList
+                key={todo.id}
+                text={todo.text}
+                completed={todo.completed}
+                onToggle={() => toggleTodo(todo.id)}
+                deleteBtn={() => deleteBtn(todo.id)}
+              />
             ))}
           </ul>
         </div>
