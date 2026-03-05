@@ -1,0 +1,13 @@
+{
+  "login": "Login",
+  "logout": "Logout",
+  "welcome": "Welcome",
+  "enter your name": "enter your name",
+  "enter a password": "enter a password",
+  "submit": "submit",
+  "todo": "todo",
+  "add": "add",
+  "delete": "delete",
+  "count": "count",
+  "enter name and password": "enter name and password"
+}

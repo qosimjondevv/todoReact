@@ -1,18 +1,39 @@
 .todoApp {
-  max-width: 420px;
+  max-width: 480px;
   margin: 40px auto;
   padding: 20px;
   border-radius: 16px;
   background: #f9fafb;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.8);
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
+  .translation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    h1 {
+      font-weight: bold;
+    }
+    .btn_trans {
+      display: flex;
+      gap: 8px;
+    }
+    .btn_trans button {
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: none;
+      background: #e5e7eb;
+    }
+    .btn_trans button.active {
+      background: #ef4444;
+      color: white;
+    }
   }
+
   form {
     display: flex;
     gap: 8px;
+    margin-top: 20px;
     margin-bottom: 20px;
     input {
       flex: 1;
@@ -23,7 +44,7 @@
       font-weight: bold;
     }
   }
-  button {
+  .submit_btn {
     padding: 10px 16px;
     border: none;
     border-radius: 10px;
@@ -36,42 +57,5 @@
     align-items: center;
     font-size: 16px;
     font-weight: bold;
-  }
-}
-
-.todoList {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    input {
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-    }
-    span {
-      flex: 1;
-      color: #111827;
-      word-break: break-all;
-    }
-    button {
-      flex-shrink: 0;
-      border: none;
-      cursor: pointer;
-      padding: 6px 10px;
-      border-radius: 8xp;
-      color: white;
-      background: #ef4444;
-    }
   }
 }

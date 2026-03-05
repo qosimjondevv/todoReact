@@ -1,0 +1,13 @@
+{
+  "login": "Входить",
+  "logout": "Выход",
+  "welcome": "Пожалуйста",
+  "enter your name": "введите свое имя",
+  "enter a password": "введите пароль",
+  "submit": "submit",
+  "todo": "дела",
+  "add": "добавлять",
+  "delete": "удалить",
+  "count": "считать",
+  "enter name and password": "введите имя и пароль"
+}

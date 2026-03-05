@@ -1,37 +1,45 @@
-import { useState } from "react";
 import "./TodoApp.scss";
 import TodoList from "../TodoList/TodoList";
+import useTodo from "../hooks/useTodo";
 function TodoApp() {
-  const [text, setText] = useState("");
-  const [todos, setTodos] = useState([]);
-
-  const addTodo = (e) => {
-    e.preventDefault();
-    if (text === "") return;
-    const newTodo = {
-      id: Date.now(),
-      text: text,
-      completed: false,
-    };
-    setTodos([...todos, newTodo]);
-    setText("");
-  };
-
-  const deleteBtn = (id) => {
-    const filterTodo = todos.filter((todo) => todo.id !== id);
-    setTodos(filterTodo);
-  };
-
-  const toggleTodo = (id) => {
-    const uptedeTodo = todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-    );
-    setTodos(uptedeTodo);
-  };
+  const {
+    t,
+    setText,
+    todos,
+    text,
+    activeLang,
+    changeLanguage,
+    deleteBtn,
+    addTodo,
+    toggleTodo,
+  } = useTodo();
   return (
     <>
       <div className="todoApp">
-        <h1>Todo App</h1>
+        <div className="translation">
+          <h1>Todo App</h1>
+          <div className="btn_trans">
+            <button
+              className={activeLang === "eng" ? "active" : ""}
+              onClick={() => changeLanguage("eng")}
+            >
+              eng
+            </button>
+            <button
+              className={activeLang === "uzb" ? "active" : ""}
+              onClick={() => changeLanguage("uzb")}
+            >
+              uzb
+            </button>
+            <button
+              className={activeLang === "rus" ? "active" : ""}
+              onClick={() => changeLanguage("rus")}
+            >
+              rus
+            </button>
+          </div>
+        </div>
+
         <form onSubmit={addTodo}>
           <input
             type="text"
@@ -39,8 +47,12 @@ function TodoApp() {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <button type="submit">add</button>
-          <span>count: {todos.length}</span>
+          <button type="submit" className="submit_btn">
+            {t("add")}
+          </button>
+          <span>
+            {t("count")} {todos.length}
+          </span>
         </form>
 
         {/* ///////////// */}

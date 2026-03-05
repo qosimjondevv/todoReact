@@ -1,3 +1,4 @@
+import "./TodoList.scss";
 function TodoList({ text, deleteBtn, completed, onToggle }) {
   return (
     <>

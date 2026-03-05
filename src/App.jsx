@@ -5,14 +5,12 @@ import TodoApp from "./components/TodoApp/TodoApp";
 
 function App() {
   return (
-    <div className="container">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="TodoApp" element={<TodoApp />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="TodoApp" element={<TodoApp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

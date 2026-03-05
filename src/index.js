@@ -1,3 +1,3 @@
-export { default as TodoApp } from "./components/TodoApp/TodoApp";
-export { default as TodoList } from "./components/TodoList/TodoList";
-export { default as Login } from "./components/Login/Login";
+export { TodoApp } from "./components/TodoApp";
+export { TodoList } from "./components/TodoList";
+export { Login } from "./components/Login";

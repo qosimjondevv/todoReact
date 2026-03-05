@@ -1,0 +1,13 @@
+{
+  "login": "Kirish",
+  "logout": "Chiqish",
+  "welcome": "Xush kelibsiz",
+  "enter your name": "ismingizni kiriting",
+  "enter a password": "parolni kiriting",
+  "submit": "submit",
+  "todo": "qilmoqchi bolgan ishlar",
+  "add": "qo'shish",
+  "delete": "o'chirish",
+  "count": "hisoblash",
+  "enter name and password": "ism va parolni kiriting"
+}

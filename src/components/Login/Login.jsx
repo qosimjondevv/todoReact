@@ -1,25 +1,10 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import useForm from "../hooks/useForm";
+import "./Login.scss";
 function Login() {
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-
-  const navigator = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name === "" || password === "") {
-      alert("ismingiz va parolingizni kiriting");
-      return;
-    }
-    navigator("/TodoApp");
-  };
-
+  const { name, setName, password, setPassword, handleSubmit } = useForm();
   return (
-    <>
-      <h1>login</h1>
-
+    <div className="Login">
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -35,7 +20,7 @@ function Login() {
         />
         <button type="submit">submit</button>
       </form>
-    </>
+    </div>
   );
 }
 
